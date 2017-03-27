@@ -18,10 +18,10 @@ class Generator
   end
 
   def remove_lowest(arr)
-    arr.delete(arr.min)
+    arr.delete_at(arr.index(arr.min))
   end
 
   def remove_highest(arr)
-    arr.delete(arr.max)
+    arr.delete_at(arr.index(arr.max))
   end
 end
