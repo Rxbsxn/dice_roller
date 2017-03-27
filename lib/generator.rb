@@ -7,6 +7,7 @@ class Generator
       arr.push(Dice.twenty_sides)
     end
     remove_from_set(arr)
+    arr.sum < 55 ? five_rolls : arr
   end
 
   private
