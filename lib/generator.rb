@@ -9,13 +9,17 @@ class Generator
     end
       remove_two ? remove_from_set(arr) : 2.times{ remove_lowest(arr) }
     arr.sum < 55 ? five_rolls : arr
-    arr.push(Dice.twenty_sides)
+      extra_roll_second ? arr.push(25) : arr.push(Dice.twenty_sides)
   end
 
   private
 
   def extra_roll
-    (1..7).cover?(Dice.thirty_sides) ? extra_roll : remove_two
+    (1..7).cover?(Dice.thirty_sides) ? extra_roll_second : remove_two
+  end
+
+  def extra_roll_second
+    (24..30).cover?(Dice.thirty_sides) ? true : false
   end
 
   def remove_from_set(set)
