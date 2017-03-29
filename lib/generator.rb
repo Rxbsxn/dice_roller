@@ -10,6 +10,7 @@ class Generator
       remove_two ? remove_from_set(arr) : 2.times{ remove_lowest(arr) }
     arr.sum < 55 ? five_rolls : arr
       extra_roll_second ? arr.push(25) : arr.push(Dice.twenty_sides)
+      print_result(arr)
   end
 
   private
@@ -26,6 +27,15 @@ class Generator
     remove_highest(set)
     remove_lowest(set)
     set
+  end
+
+  def print_result(arr)
+     puts "This is your number #{arr}. Are you satisfied?"
+     choice = gets.chomp()
+    if(choice == 'yes') 
+      return 
+    else Generator.new.five_rolls
+    end
   end
 
   def remove_two
